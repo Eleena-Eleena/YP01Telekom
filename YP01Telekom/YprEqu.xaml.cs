@@ -54,8 +54,6 @@ namespace YP01Telekom
 
         private void BntCRM_Click(object sender, RoutedEventArgs e)
         {
-            CRM cRM = new CRM();
-            cRM.Show();
         }
     }
 }

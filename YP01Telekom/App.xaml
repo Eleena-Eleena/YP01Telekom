@@ -8,6 +8,7 @@
 
         <Application.Resources>
         <local:BooleanColor x:Key="booleanColor"/>
+            
         <Style TargetType="Button" x:Key="buttonCounter">
             <Setter Property="Background" Value="#B5DEFA"/>
             <Setter Property="Width" Value="20"/>

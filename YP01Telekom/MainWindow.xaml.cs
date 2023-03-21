@@ -132,6 +132,7 @@ namespace YP01Telekom
                     else
                     {
                         MessageBox.Show("Неверный пароль");
+                        TBoxPasswordWorker.Clear();
                     }
                 }
 
@@ -189,6 +190,7 @@ namespace YP01Telekom
                     else
                     {
                         MessageBox.Show("Код неверный");
+                        TBoxCodeWorker.Clear();
                         ImageCode.Visibility = Visibility.Visible;
                     }
                 }

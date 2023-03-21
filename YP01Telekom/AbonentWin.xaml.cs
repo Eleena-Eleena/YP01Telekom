@@ -122,8 +122,9 @@ namespace YP01Telekom
 
         private void BntCRM_Click(object sender, RoutedEventArgs e)
         {
-            CRM cRM = new CRM();
+            CRM cRM = new CRM(worker);
             cRM.Show();
+            this.Close();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
