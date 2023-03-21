@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="932a34153ff14396b94f66b2d868aef1" Name="Diagram1">
+        <EntityTypeShape EntityType="CRM22Model.Address_Eq" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Amount_Ports" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Clients" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Contract" Width="1.5" PointX="7.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Equipment" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Events" Width="1.5" PointX="8.25" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Form_Product" Width="1.5" PointX="10.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Genders" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.History" Width="1.5" PointX="7.5" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Identified_Data" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Installation_locations" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Lease" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.ListPhone" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Product" Width="1.5" PointX="8.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Request" Width="1.5" PointX="10.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Roles" Width="1.5" PointX="6" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Services" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.sysdiagrams" Width="1.5" PointX="9.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Type_Product" Width="1.5" PointX="12.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Type_Contract" Width="1.5" PointX="5.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Types" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRM22Model.Worker" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
+        <AssociationConnector Association="CRM22Model.FK_Installation_locations_Address_Eq" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Clients_Genders" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Contract_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_History_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Request_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Contract_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Contract_Lease" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Contract_Services" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Contract_Type_Contract" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Equipment_Identified_Data" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Equipment_Installation_locations" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Equipment_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_ListPhone_Equipment" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Events_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Form_Product_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Type_Product_Form_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Worker_Genders" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Request_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="CRM22Model.FK_Worker_Roles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

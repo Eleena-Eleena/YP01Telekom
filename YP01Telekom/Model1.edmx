@@ -1,0 +1,1391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище CRM22Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address_Eq">
+          <Key>
+            <PropertyRef Name="Id_address_eq" />
+          </Key>
+          <Property Name="Id_address_eq" Type="int" Nullable="false" />
+          <Property Name="Town" Type="varchar" MaxLength="50" />
+          <Property Name="Area" Type="varchar" MaxLength="50" />
+          <Property Name="Street" Type="varchar" MaxLength="50" />
+          <Property Name="Entrance" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Amount_Ports">
+          <Key>
+            <PropertyRef Name="Id_Amount_Port" />
+          </Key>
+          <Property Name="Id_Amount_Port" Type="int" Nullable="false" />
+          <Property Name="Amount_Port" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id_Client" />
+          </Key>
+          <Property Name="Id_Client" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FIO_Client" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="Birth_Day" Type="date" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Passport_Number" Type="varchar" MaxLength="50" />
+          <Property Name="Passport_Code" Type="varchar" MaxLength="50" />
+          <Property Name="Passport_Issued_By" Type="varchar" MaxLength="50" />
+          <Property Name="Passport_Date" Type="date" />
+          <Property Name="Number_Client" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="Id_contract" />
+          </Key>
+          <Property Name="Id_contract" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Personal_Account" Type="varchar" MaxLength="50" />
+          <Property Name="Equipment" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number_Contract" Type="varchar" MaxLength="50" />
+          <Property Name="Date_Contract" Type="date" />
+          <Property Name="Type_contract" Type="int" />
+          <Property Name="Date_Dis_Contract" Type="date" />
+          <Property Name="Reason_Dis" Type="varchar" MaxLength="50" />
+          <Property Name="Сonnected_Services" Type="int" />
+          <Property Name="Lease" Type="int" />
+          <Property Name="Flag" Type="bit" />
+          <Property Name="Id_client" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="Id_Equipments" />
+          </Key>
+          <Property Name="Id_Equipments" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Identifiend_Data" Type="int" />
+          <Property Name="Installation_location" Type="int" />
+          <Property Name="Other" Type="varchar" MaxLength="500" />
+          <Property Name="Phone_gateway" Type="varchar" MaxLength="50" />
+          <Property Name="Date_Installation" Type="date" />
+          <Property Name="Amount_Port" Type="int" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="Id_Event" />
+          </Key>
+          <Property Name="Id_Event" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Role" Type="int" />
+          <Property Name="Event" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Form Product">
+          <Key>
+            <PropertyRef Name="Id_FormProduct" />
+          </Key>
+          <Property Name="Id_FormProduct" Type="int" Nullable="false" />
+          <Property Name="Id_Product" Type="int" />
+          <Property Name="Name_FormProduct" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Genders">
+          <Key>
+            <PropertyRef Name="Id_Gender" />
+          </Key>
+          <Property Name="Id_Gender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Genders" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="Id_History" />
+          </Key>
+          <Property Name="Id_History" Type="int" Nullable="false" />
+          <Property Name="Id_Client" Type="nvarchar" MaxLength="10" />
+          <Property Name="Handling" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Identified_Data">
+          <Key>
+            <PropertyRef Name="Id_Identifiend_Data" />
+          </Key>
+          <Property Name="Id_Identifiend_Data" Type="int" Nullable="false" />
+          <Property Name="Serial_number" Type="int" />
+          <Property Name="Inventory_number" Type="int" />
+          <Property Name="IP" Type="int" />
+          <Property Name="MAC" Type="int" />
+          <Property Name="Other" Type="int" />
+        </EntityType>
+        <EntityType Name="Installation_locations">
+          <Key>
+            <PropertyRef Name="Id_installation_location" />
+          </Key>
+          <Property Name="Id_installation_location" Type="int" Nullable="false" />
+          <Property Name="Address" Type="int" />
+          <Property Name="Сonnection_point" Type="varchar" MaxLength="50" />
+          <Property Name="Geographical_coordinates" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Lease">
+          <Key>
+            <PropertyRef Name="Id_lease" />
+          </Key>
+          <Property Name="Id_lease" Type="int" Nullable="false" />
+          <Property Name="Number_Lease" Type="varchar" MaxLength="50" />
+          <Property Name="Date_Lease" Type="varchar" MaxLength="50" />
+          <Property Name="Condition" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ListPhone">
+          <Key>
+            <PropertyRef Name="Id_ListPhone" />
+          </Key>
+          <Property Name="Id_ListPhone" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Id_Equipment" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id_Product" />
+          </Key>
+          <Property Name="Id_Product" Type="int" Nullable="false" />
+          <Property Name="Name_Product" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="Id_Request" />
+          </Key>
+          <Property Name="Id_Request" Type="int" Nullable="false" />
+          <Property Name="Number_Request" Type="varchar" MaxLength="50" />
+          <Property Name="Date_request" Type="date" />
+          <Property Name="Product" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Type_Problem" Type="int" />
+          <Property Name="Reason_request" Type="varchar" MaxLength="50" />
+          <Property Name="Date_close" Type="date" />
+          <Property Name="Id_client" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id_Role" />
+          </Key>
+          <Property Name="Id_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="Id_Service" />
+          </Key>
+          <Property Name="Id_Service" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Type Product">
+          <Key>
+            <PropertyRef Name="Id_TypeProduct" />
+          </Key>
+          <Property Name="Id_TypeProduct" Type="int" Nullable="false" />
+          <Property Name="Id_FormProduct" Type="int" />
+          <Property Name="Name_TypeProduct" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Type_Contract">
+          <Key>
+            <PropertyRef Name="Id_type_contract" />
+          </Key>
+          <Property Name="Id_type_contract" Type="int" Nullable="false" />
+          <Property Name="Type_contract" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Types">
+          <Key>
+            <PropertyRef Name="id_type" />
+          </Key>
+          <Property Name="id_type" Type="int" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="Id_Worker" />
+          </Key>
+          <Property Name="Id_Worker" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Role" Type="int" />
+          <Property Name="Worker_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="int" />
+        </EntityType>
+        <Association Name="FK_Clients_Genders">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="0..1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_Client" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Equipment">
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="Id_Equipments" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Equipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Lease">
+          <End Role="Lease" Type="Self.Lease" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lease">
+              <PropertyRef Name="Id_lease" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Lease" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Services">
+          <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services">
+              <PropertyRef Name="Id_Service" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Сonnected_Services" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Type_Contract">
+          <End Role="Type_Contract" Type="Self.Type_Contract" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Contract">
+              <PropertyRef Name="Id_type_contract" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Type_contract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Identified_Data">
+          <End Role="Identified_Data" Type="Self.Identified_Data" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Identified_Data">
+              <PropertyRef Name="Id_Identifiend_Data" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Identifiend_Data" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Installation_locations">
+          <End Role="Installation_locations" Type="Self.Installation_locations" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Installation_locations">
+              <PropertyRef Name="Id_installation_location" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Installation_location" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Types">
+          <End Role="Types" Type="Self.Types" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Types">
+              <PropertyRef Name="id_type" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Form Product_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Form Product" Type="Self.Form Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id_Product" />
+            </Principal>
+            <Dependent Role="Form Product">
+              <PropertyRef Name="Id_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+          <End Role="History" Type="Self.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_Client" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="Id_Client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Installation_locations_Address_Eq">
+          <End Role="Address_Eq" Type="Self.Address_Eq" Multiplicity="0..1" />
+          <End Role="Installation_locations" Type="Self.Installation_locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address_Eq">
+              <PropertyRef Name="Id_address_eq" />
+            </Principal>
+            <Dependent Role="Installation_locations">
+              <PropertyRef Name="Address" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListPhone_Equipment">
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+          <End Role="ListPhone" Type="Self.ListPhone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="Id_Equipments" />
+            </Principal>
+            <Dependent Role="ListPhone">
+              <PropertyRef Name="Id_Equipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_Client" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="Id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id_Product" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Type Product_Form Product">
+          <End Role="Form Product" Type="Self.Form Product" Multiplicity="0..1" />
+          <End Role="Type Product" Type="Self.Type Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form Product">
+              <PropertyRef Name="Id_FormProduct" />
+            </Principal>
+            <Dependent Role="Type Product">
+              <PropertyRef Name="Id_FormProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_Genders">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище CRM22ModelContainer">
+          <EntitySet Name="Address_Eq" EntityType="Self.Address_Eq" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Amount_Ports" EntityType="Self.Amount_Ports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Form Product" EntityType="Self.Form Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Identified_Data" EntityType="Self.Identified_Data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Installation_locations" EntityType="Self.Installation_locations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lease" EntityType="Self.Lease" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListPhone" EntityType="Self.ListPhone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type Product" EntityType="Self.Type Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type_Contract" EntityType="Self.Type_Contract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Types" EntityType="Self.Types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Clients_Genders" Association="Self.FK_Clients_Genders">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Clients" Association="Self.FK_Contract_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Equipment" Association="Self.FK_Contract_Equipment">
+            <End Role="Equipment" EntitySet="Equipment" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Lease" Association="Self.FK_Contract_Lease">
+            <End Role="Lease" EntitySet="Lease" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Services" Association="Self.FK_Contract_Services">
+            <End Role="Services" EntitySet="Services" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Type_Contract" Association="Self.FK_Contract_Type_Contract">
+            <End Role="Type_Contract" EntitySet="Type_Contract" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Identified_Data" Association="Self.FK_Equipment_Identified_Data">
+            <End Role="Identified_Data" EntitySet="Identified_Data" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Installation_locations" Association="Self.FK_Equipment_Installation_locations">
+            <End Role="Installation_locations" EntitySet="Installation_locations" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Types" Association="Self.FK_Equipment_Types">
+            <End Role="Types" EntitySet="Types" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Roles" Association="Self.FK_Events_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Form Product_Product" Association="Self.FK_Form Product_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Form Product" EntitySet="Form Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_Clients" Association="Self.FK_History_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="History" EntitySet="History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Installation_locations_Address_Eq" Association="Self.FK_Installation_locations_Address_Eq">
+            <End Role="Address_Eq" EntitySet="Address_Eq" />
+            <End Role="Installation_locations" EntitySet="Installation_locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListPhone_Equipment" Association="Self.FK_ListPhone_Equipment">
+            <End Role="Equipment" EntitySet="Equipment" />
+            <End Role="ListPhone" EntitySet="ListPhone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Clients" Association="Self.FK_Request_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Product" Association="Self.FK_Request_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Type Product_Form Product" Association="Self.FK_Type Product_Form Product">
+            <End Role="Form Product" EntitySet="Form Product" />
+            <End Role="Type Product" EntitySet="Type Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_Genders" Association="Self.FK_Worker_Genders">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_Roles" Association="Self.FK_Worker_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRM22Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Address_Eq">
+          <Key>
+            <PropertyRef Name="Id_address_eq" />
+          </Key>
+          <Property Name="Id_address_eq" Type="Int32" Nullable="false" />
+          <Property Name="Town" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Entrance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Installation_locations" Relationship="Self.FK_Installation_locations_Address_Eq" FromRole="Address_Eq" ToRole="Installation_locations" />
+        </EntityType>
+        <EntityType Name="Amount_Ports">
+          <Key>
+            <PropertyRef Name="Id_Amount_Port" />
+          </Key>
+          <Property Name="Id_Amount_Port" Type="Int32" Nullable="false" />
+          <Property Name="Amount_Port" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id_Client" />
+          </Key>
+          <Property Name="Id_Client" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FIO_Client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="Birth_Day" Type="DateTime" Precision="0" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Passport_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Passport_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Passport_Issued_By" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Passport_Date" Type="DateTime" Precision="0" />
+          <Property Name="Number_Client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Genders" Relationship="Self.FK_Clients_Genders" FromRole="Clients" ToRole="Genders" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_Contract_Clients" FromRole="Clients" ToRole="Contract" />
+          <NavigationProperty Name="History" Relationship="Self.FK_History_Clients" FromRole="Clients" ToRole="History" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Request_Clients" FromRole="Clients" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="Id_contract" />
+          </Key>
+          <Property Name="Id_contract" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Personal_Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number_Contract" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Contract" Type="DateTime" Precision="0" />
+          <Property Name="Type_contract" Type="Int32" />
+          <Property Name="Date_Dis_Contract" Type="DateTime" Precision="0" />
+          <Property Name="Reason_Dis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Сonnected_Services" Type="Int32" />
+          <Property Name="Lease" Type="Int32" />
+          <Property Name="Flag" Type="Boolean" />
+          <Property Name="Id_client" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Contract_Clients" FromRole="Contract" ToRole="Clients" />
+          <NavigationProperty Name="Equipment1" Relationship="Self.FK_Contract_Equipment" FromRole="Contract" ToRole="Equipment" />
+          <NavigationProperty Name="Lease1" Relationship="Self.FK_Contract_Lease" FromRole="Contract" ToRole="Lease" />
+          <NavigationProperty Name="Services" Relationship="Self.FK_Contract_Services" FromRole="Contract" ToRole="Services" />
+          <NavigationProperty Name="Type_Contract1" Relationship="Self.FK_Contract_Type_Contract" FromRole="Contract" ToRole="Type_Contract" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="Id_Equipments" />
+          </Key>
+          <Property Name="Id_Equipments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Identifiend_Data" Type="Int32" />
+          <Property Name="Installation_location" Type="Int32" />
+          <Property Name="Other" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Phone_gateway" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Installation" Type="DateTime" Precision="0" />
+          <Property Name="Amount_Port" Type="Int32" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_Contract_Equipment" FromRole="Equipment" ToRole="Contract" />
+          <NavigationProperty Name="Identified_Data" Relationship="Self.FK_Equipment_Identified_Data" FromRole="Equipment" ToRole="Identified_Data" />
+          <NavigationProperty Name="Installation_locations" Relationship="Self.FK_Equipment_Installation_locations" FromRole="Equipment" ToRole="Installation_locations" />
+          <NavigationProperty Name="Types" Relationship="Self.FK_Equipment_Types" FromRole="Equipment" ToRole="Types" />
+          <NavigationProperty Name="ListPhone" Relationship="Self.FK_ListPhone_Equipment" FromRole="Equipment" ToRole="ListPhone" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="Id_Event" />
+          </Key>
+          <Property Name="Id_Event" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Role" Type="Int32" />
+          <Property Name="Event" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK_Events_Roles" FromRole="Events" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="Form_Product">
+          <Key>
+            <PropertyRef Name="Id_FormProduct" />
+          </Key>
+          <Property Name="Id_FormProduct" Type="Int32" Nullable="false" />
+          <Property Name="Id_Product" Type="Int32" />
+          <Property Name="Name_FormProduct" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Form_Product_Product" FromRole="Form_Product" ToRole="Product" />
+          <NavigationProperty Name="Type_Product" Relationship="Self.FK_Type_Product_Form_Product" FromRole="Form_Product" ToRole="Type_Product" />
+        </EntityType>
+        <EntityType Name="Genders">
+          <Key>
+            <PropertyRef Name="Id_Gender" />
+          </Key>
+          <Property Name="Id_Gender" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Genders1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Genders" FromRole="Genders" ToRole="Clients" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Genders" FromRole="Genders" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="Id_History" />
+          </Key>
+          <Property Name="Id_History" Type="Int32" Nullable="false" />
+          <Property Name="Id_Client" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Handling" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_History_Clients" FromRole="History" ToRole="Clients" />
+        </EntityType>
+        <EntityType Name="Identified_Data">
+          <Key>
+            <PropertyRef Name="Id_Identifiend_Data" />
+          </Key>
+          <Property Name="Id_Identifiend_Data" Type="Int32" Nullable="false" />
+          <Property Name="Serial_number" Type="Int32" />
+          <Property Name="Inventory_number" Type="Int32" />
+          <Property Name="IP" Type="Int32" />
+          <Property Name="MAC" Type="Int32" />
+          <Property Name="Other" Type="Int32" />
+          <NavigationProperty Name="Equipment" Relationship="Self.FK_Equipment_Identified_Data" FromRole="Identified_Data" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="Installation_locations">
+          <Key>
+            <PropertyRef Name="Id_installation_location" />
+          </Key>
+          <Property Name="Id_installation_location" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="Int32" />
+          <Property Name="Сonnection_point" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Geographical_coordinates" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Address_Eq" Relationship="Self.FK_Installation_locations_Address_Eq" FromRole="Installation_locations" ToRole="Address_Eq" />
+          <NavigationProperty Name="Equipment" Relationship="Self.FK_Equipment_Installation_locations" FromRole="Installation_locations" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="Lease">
+          <Key>
+            <PropertyRef Name="Id_lease" />
+          </Key>
+          <Property Name="Id_lease" Type="Int32" Nullable="false" />
+          <Property Name="Number_Lease" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Lease" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Condition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_Contract_Lease" FromRole="Lease" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="ListPhone">
+          <Key>
+            <PropertyRef Name="Id_ListPhone" />
+          </Key>
+          <Property Name="Id_ListPhone" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Equipment" Relationship="Self.FK_ListPhone_Equipment" FromRole="ListPhone" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id_Product" />
+          </Key>
+          <Property Name="Id_Product" Type="Int32" Nullable="false" />
+          <Property Name="Name_Product" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Form_Product" Relationship="Self.FK_Form_Product_Product" FromRole="Product" ToRole="Form_Product" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Request_Product" FromRole="Product" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="Id_Request" />
+          </Key>
+          <Property Name="Id_Request" Type="Int32" Nullable="false" />
+          <Property Name="Number_Request" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date_request" Type="DateTime" Precision="0" />
+          <Property Name="Product" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type_Problem" Type="Int32" />
+          <Property Name="Reason_request" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date_close" Type="DateTime" Precision="0" />
+          <Property Name="Id_client" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Request_Clients" FromRole="Request" ToRole="Clients" />
+          <NavigationProperty Name="Product1" Relationship="Self.FK_Request_Product" FromRole="Request" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Id_Role" />
+          </Key>
+          <Property Name="Id_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_Events_Roles" FromRole="Roles" ToRole="Events" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_Roles" FromRole="Roles" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="Id_Service" />
+          </Key>
+          <Property Name="Id_Service" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_Contract_Services" FromRole="Services" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Type_Product">
+          <Key>
+            <PropertyRef Name="Id_TypeProduct" />
+          </Key>
+          <Property Name="Id_TypeProduct" Type="Int32" Nullable="false" />
+          <Property Name="Id_FormProduct" Type="Int32" />
+          <Property Name="Name_TypeProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Form_Product" Relationship="Self.FK_Type_Product_Form_Product" FromRole="Type_Product" ToRole="Form_Product" />
+        </EntityType>
+        <EntityType Name="Type_Contract">
+          <Key>
+            <PropertyRef Name="Id_type_contract" />
+          </Key>
+          <Property Name="Id_type_contract" Type="Int32" Nullable="false" />
+          <Property Name="Type_contract1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contract" Relationship="Self.FK_Contract_Type_Contract" FromRole="Type_Contract" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="Types">
+          <Key>
+            <PropertyRef Name="id_type" />
+          </Key>
+          <Property Name="id_type" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Equipment" Relationship="Self.FK_Equipment_Types" FromRole="Types" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="Id_Worker" />
+          </Key>
+          <Property Name="Id_Worker" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="Int32" />
+          <Property Name="Worker_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="Int32" />
+          <NavigationProperty Name="Genders" Relationship="Self.FK_Worker_Genders" FromRole="Worker" ToRole="Genders" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK_Worker_Roles" FromRole="Worker" ToRole="Roles" />
+        </EntityType>
+        <Association Name="FK_Installation_locations_Address_Eq">
+          <End Role="Address_Eq" Type="Self.Address_Eq" Multiplicity="0..1" />
+          <End Role="Installation_locations" Type="Self.Installation_locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address_Eq">
+              <PropertyRef Name="Id_address_eq" />
+            </Principal>
+            <Dependent Role="Installation_locations">
+              <PropertyRef Name="Address" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Genders">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="0..1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_Client" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_History_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+          <End Role="History" Type="Self.History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_Client" />
+            </Principal>
+            <Dependent Role="History">
+              <PropertyRef Name="Id_Client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id_Client" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="Id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Equipment">
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="Id_Equipments" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Equipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Lease">
+          <End Role="Lease" Type="Self.Lease" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lease">
+              <PropertyRef Name="Id_lease" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Lease" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Services">
+          <End Role="Services" Type="Self.Services" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services">
+              <PropertyRef Name="Id_Service" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Сonnected_Services" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contract_Type_Contract">
+          <End Role="Type_Contract" Type="Self.Type_Contract" Multiplicity="0..1" />
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Contract">
+              <PropertyRef Name="Id_type_contract" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="Type_contract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Identified_Data">
+          <End Role="Identified_Data" Type="Self.Identified_Data" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Identified_Data">
+              <PropertyRef Name="Id_Identifiend_Data" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Identifiend_Data" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Installation_locations">
+          <End Role="Installation_locations" Type="Self.Installation_locations" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Installation_locations">
+              <PropertyRef Name="Id_installation_location" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Installation_location" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Types">
+          <End Role="Types" Type="Self.Types" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Types">
+              <PropertyRef Name="id_type" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ListPhone_Equipment">
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+          <End Role="ListPhone" Type="Self.ListPhone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="Id_Equipments" />
+            </Principal>
+            <Dependent Role="ListPhone">
+              <PropertyRef Name="Id_Equipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Events_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Form_Product_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Form_Product" Type="Self.Form_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id_Product" />
+            </Principal>
+            <Dependent Role="Form_Product">
+              <PropertyRef Name="Id_Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Type_Product_Form_Product">
+          <End Role="Form_Product" Type="Self.Form_Product" Multiplicity="0..1" />
+          <End Role="Type_Product" Type="Self.Type_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Form_Product">
+              <PropertyRef Name="Id_FormProduct" />
+            </Principal>
+            <Dependent Role="Type_Product">
+              <PropertyRef Name="Id_FormProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_Genders">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id_Product" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Address_Eq" EntityType="Self.Address_Eq" />
+          <EntitySet Name="Amount_Ports" EntityType="Self.Amount_Ports" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
+          <EntitySet Name="Contract" EntityType="Self.Contract" />
+          <EntitySet Name="Equipment" EntityType="Self.Equipment" />
+          <EntitySet Name="Events" EntityType="Self.Events" />
+          <EntitySet Name="Form_Product" EntityType="Self.Form_Product" />
+          <EntitySet Name="Genders" EntityType="Self.Genders" />
+          <EntitySet Name="History" EntityType="Self.History" />
+          <EntitySet Name="Identified_Data" EntityType="Self.Identified_Data" />
+          <EntitySet Name="Installation_locations" EntityType="Self.Installation_locations" />
+          <EntitySet Name="Lease" EntityType="Self.Lease" />
+          <EntitySet Name="ListPhone" EntityType="Self.ListPhone" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="Request" EntityType="Self.Request" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="Services" EntityType="Self.Services" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Type_Product" EntityType="Self.Type_Product" />
+          <EntitySet Name="Type_Contract" EntityType="Self.Type_Contract" />
+          <EntitySet Name="Types" EntityType="Self.Types" />
+          <EntitySet Name="Worker" EntityType="Self.Worker" />
+          <AssociationSet Name="FK_Installation_locations_Address_Eq" Association="Self.FK_Installation_locations_Address_Eq">
+            <End Role="Address_Eq" EntitySet="Address_Eq" />
+            <End Role="Installation_locations" EntitySet="Installation_locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Genders" Association="Self.FK_Clients_Genders">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Clients" Association="Self.FK_Contract_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_History_Clients" Association="Self.FK_History_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="History" EntitySet="History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Clients" Association="Self.FK_Request_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Equipment" Association="Self.FK_Contract_Equipment">
+            <End Role="Equipment" EntitySet="Equipment" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Lease" Association="Self.FK_Contract_Lease">
+            <End Role="Lease" EntitySet="Lease" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Services" Association="Self.FK_Contract_Services">
+            <End Role="Services" EntitySet="Services" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contract_Type_Contract" Association="Self.FK_Contract_Type_Contract">
+            <End Role="Type_Contract" EntitySet="Type_Contract" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Identified_Data" Association="Self.FK_Equipment_Identified_Data">
+            <End Role="Identified_Data" EntitySet="Identified_Data" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Installation_locations" Association="Self.FK_Equipment_Installation_locations">
+            <End Role="Installation_locations" EntitySet="Installation_locations" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Types" Association="Self.FK_Equipment_Types">
+            <End Role="Types" EntitySet="Types" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListPhone_Equipment" Association="Self.FK_ListPhone_Equipment">
+            <End Role="Equipment" EntitySet="Equipment" />
+            <End Role="ListPhone" EntitySet="ListPhone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Events_Roles" Association="Self.FK_Events_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Form_Product_Product" Association="Self.FK_Form_Product_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Form_Product" EntitySet="Form_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Type_Product_Form_Product" Association="Self.FK_Type_Product_Form_Product">
+            <End Role="Form_Product" EntitySet="Form_Product" />
+            <End Role="Type_Product" EntitySet="Type_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_Genders" Association="Self.FK_Worker_Genders">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Product" Association="Self.FK_Request_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_Roles" Association="Self.FK_Worker_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CRM22ModelContainer" CdmEntityContainer="Entities1">
+          <EntitySetMapping Name="Address_Eq">
+            <EntityTypeMapping TypeName="CRM22Model.Address_Eq">
+              <MappingFragment StoreEntitySet="Address_Eq">
+                <ScalarProperty Name="Id_address_eq" ColumnName="Id_address_eq" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Entrance" ColumnName="Entrance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Amount_Ports">
+            <EntityTypeMapping TypeName="CRM22Model.Amount_Ports">
+              <MappingFragment StoreEntitySet="Amount_Ports">
+                <ScalarProperty Name="Id_Amount_Port" ColumnName="Id_Amount_Port" />
+                <ScalarProperty Name="Amount_Port" ColumnName="Amount_Port" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="CRM22Model.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Id_Client" ColumnName="Id_Client" />
+                <ScalarProperty Name="FIO_Client" ColumnName="FIO_Client" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Birth_Day" ColumnName="Birth_Day" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Passport_Number" ColumnName="Passport_Number" />
+                <ScalarProperty Name="Passport_Code" ColumnName="Passport_Code" />
+                <ScalarProperty Name="Passport_Issued_By" ColumnName="Passport_Issued_By" />
+                <ScalarProperty Name="Passport_Date" ColumnName="Passport_Date" />
+                <ScalarProperty Name="Number_Client" ColumnName="Number_Client" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contract">
+            <EntityTypeMapping TypeName="CRM22Model.Contract">
+              <MappingFragment StoreEntitySet="Contract">
+                <ScalarProperty Name="Id_contract" ColumnName="Id_contract" />
+                <ScalarProperty Name="Personal_Account" ColumnName="Personal_Account" />
+                <ScalarProperty Name="Equipment" ColumnName="Equipment" />
+                <ScalarProperty Name="Number_Contract" ColumnName="Number_Contract" />
+                <ScalarProperty Name="Date_Contract" ColumnName="Date_Contract" />
+                <ScalarProperty Name="Type_contract" ColumnName="Type_contract" />
+                <ScalarProperty Name="Date_Dis_Contract" ColumnName="Date_Dis_Contract" />
+                <ScalarProperty Name="Reason_Dis" ColumnName="Reason_Dis" />
+                <ScalarProperty Name="Сonnected_Services" ColumnName="Сonnected_Services" />
+                <ScalarProperty Name="Lease" ColumnName="Lease" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Id_client" ColumnName="Id_client" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipment">
+            <EntityTypeMapping TypeName="CRM22Model.Equipment">
+              <MappingFragment StoreEntitySet="Equipment">
+                <ScalarProperty Name="Id_Equipments" ColumnName="Id_Equipments" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Identifiend_Data" ColumnName="Identifiend_Data" />
+                <ScalarProperty Name="Installation_location" ColumnName="Installation_location" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Phone_gateway" ColumnName="Phone_gateway" />
+                <ScalarProperty Name="Date_Installation" ColumnName="Date_Installation" />
+                <ScalarProperty Name="Amount_Port" ColumnName="Amount_Port" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="CRM22Model.Events">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="Id_Event" ColumnName="Id_Event" />
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Form_Product">
+            <EntityTypeMapping TypeName="CRM22Model.Form_Product">
+              <MappingFragment StoreEntitySet="Form Product">
+                <ScalarProperty Name="Id_FormProduct" ColumnName="Id_FormProduct" />
+                <ScalarProperty Name="Id_Product" ColumnName="Id_Product" />
+                <ScalarProperty Name="Name_FormProduct" ColumnName="Name_FormProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="CRM22Model.Genders">
+              <MappingFragment StoreEntitySet="Genders">
+                <ScalarProperty Name="Id_Gender" ColumnName="Id_Gender" />
+                <ScalarProperty Name="Genders1" ColumnName="Genders" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History">
+            <EntityTypeMapping TypeName="CRM22Model.History">
+              <MappingFragment StoreEntitySet="History">
+                <ScalarProperty Name="Id_History" ColumnName="Id_History" />
+                <ScalarProperty Name="Id_Client" ColumnName="Id_Client" />
+                <ScalarProperty Name="Handling" ColumnName="Handling" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Identified_Data">
+            <EntityTypeMapping TypeName="CRM22Model.Identified_Data">
+              <MappingFragment StoreEntitySet="Identified_Data">
+                <ScalarProperty Name="Id_Identifiend_Data" ColumnName="Id_Identifiend_Data" />
+                <ScalarProperty Name="Serial_number" ColumnName="Serial_number" />
+                <ScalarProperty Name="Inventory_number" ColumnName="Inventory_number" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="MAC" ColumnName="MAC" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Installation_locations">
+            <EntityTypeMapping TypeName="CRM22Model.Installation_locations">
+              <MappingFragment StoreEntitySet="Installation_locations">
+                <ScalarProperty Name="Id_installation_location" ColumnName="Id_installation_location" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Сonnection_point" ColumnName="Сonnection_point" />
+                <ScalarProperty Name="Geographical_coordinates" ColumnName="Geographical_coordinates" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lease">
+            <EntityTypeMapping TypeName="CRM22Model.Lease">
+              <MappingFragment StoreEntitySet="Lease">
+                <ScalarProperty Name="Id_lease" ColumnName="Id_lease" />
+                <ScalarProperty Name="Number_Lease" ColumnName="Number_Lease" />
+                <ScalarProperty Name="Date_Lease" ColumnName="Date_Lease" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListPhone">
+            <EntityTypeMapping TypeName="CRM22Model.ListPhone">
+              <MappingFragment StoreEntitySet="ListPhone">
+                <ScalarProperty Name="Id_ListPhone" ColumnName="Id_ListPhone" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Id_Equipment" ColumnName="Id_Equipment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="CRM22Model.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id_Product" ColumnName="Id_Product" />
+                <ScalarProperty Name="Name_Product" ColumnName="Name_Product" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Request">
+            <EntityTypeMapping TypeName="CRM22Model.Request">
+              <MappingFragment StoreEntitySet="Request">
+                <ScalarProperty Name="Id_Request" ColumnName="Id_Request" />
+                <ScalarProperty Name="Number_Request" ColumnName="Number_Request" />
+                <ScalarProperty Name="Date_request" ColumnName="Date_request" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Type_Problem" ColumnName="Type_Problem" />
+                <ScalarProperty Name="Reason_request" ColumnName="Reason_request" />
+                <ScalarProperty Name="Date_close" ColumnName="Date_close" />
+                <ScalarProperty Name="Id_client" ColumnName="Id_client" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="CRM22Model.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="CRM22Model.Services">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="Id_Service" ColumnName="Id_Service" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CRM22Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type_Product">
+            <EntityTypeMapping TypeName="CRM22Model.Type_Product">
+              <MappingFragment StoreEntitySet="Type Product">
+                <ScalarProperty Name="Id_TypeProduct" ColumnName="Id_TypeProduct" />
+                <ScalarProperty Name="Id_FormProduct" ColumnName="Id_FormProduct" />
+                <ScalarProperty Name="Name_TypeProduct" ColumnName="Name_TypeProduct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type_Contract">
+            <EntityTypeMapping TypeName="CRM22Model.Type_Contract">
+              <MappingFragment StoreEntitySet="Type_Contract">
+                <ScalarProperty Name="Id_type_contract" ColumnName="Id_type_contract" />
+                <ScalarProperty Name="Type_contract1" ColumnName="Type_contract" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Types">
+            <EntityTypeMapping TypeName="CRM22Model.Types">
+              <MappingFragment StoreEntitySet="Types">
+                <ScalarProperty Name="id_type" ColumnName="id_type" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Worker">
+            <EntityTypeMapping TypeName="CRM22Model.Worker">
+              <MappingFragment StoreEntitySet="Worker">
+                <ScalarProperty Name="Id_Worker" ColumnName="Id_Worker" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Worker_Name" ColumnName="Worker_Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,126 @@
+﻿<Window x:Class="YP01Telekom.AbonentWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YP01Telekom"
+                Loaded="Window_Loaded"
+        mc:Ignorable="d"
+        Title="Телеком Нева Связь" Height="600" Width="1612">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="photo/Лого.jpg" MouseDown="Image_MouseDown"/>
+
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal" Name="BntAboS">
+                    <Image Width="30" Source="photo/Абоненты.png"/>
+                    <Button Content="Абоненты" Width="200" Height="30" FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntAbo" Click="BntAbo_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"  Name="BntActS">
+                    <Image Width="30" Source="photo/Активы.png"/>
+                    <Button Content="Активы" Height="30"  Width="200"  FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntAct" Click="BntAct_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"  Name="BntYOS">
+                    <Image Width="30" Source="photo/Управление обрудованием.jpg"/>
+                    <Button Content="Управление оборудованием"  Width="200"  Height="30" FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntYO" Click="BntYO_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"  Name="BntBilS">
+                    <Image Width="30" Source="photo/Биллинг.jpg"/>
+                    <Button Content="Биллинг" Height="30"  Width="200"  FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntBil" Click="BntBil_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="BntPPS">
+                    <Image Width="30" Source="photo/Поддержка пользователей.jpg"/>
+                    <Button Content="Поддержка пользователей" Height="30"  Width="200"  FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntPP" Click="BntPP_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="BntCRMS">
+                    <Image Width="30" Source="photo/CRM.png"/>
+                    <Button Content="CRM" Height="30" FontSize="12"  Width="200"  Background="#B5DEFA" Margin="5"
+                        Name="BntCRM" Click="BntCRM_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" VerticalAlignment="Center">
+                <Button Content="проф." Width="40" Height="40" 
+                        Style="{StaticResource buttonCounter}"/>
+                <Button Content="?" FontSize="18"  Width="40" FontWeight="Bold" Height="40" 
+                        Style="{StaticResource buttonCounter}"/>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Абоненты ТНС" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="1" Content="Выбрать" Name="BntEdit" Click="BntEdit_Click" Background="#B5DEFA"/>
+            <DataGrid Grid.Row="0" x:Name="DGridPr" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="DGridPr_MouseDoubleClick">
+                <DataGrid.Columns>
+                    <DataGridTextColumn  Header="Номер абонента" Binding="{Binding Clients.Id_Client}" Width="*"/>
+                    <DataGridTextColumn Header="ФИО" Binding="{Binding Clients.FIO_Client}" Width="*"/>
+                    <DataGridTextColumn  Header="Лицевой счет" Binding="{Binding Personal_Account}" Width="*"/>
+                    <DataGridTextColumn  Header="Номер договора" Binding="{Binding Clients.Number_Client}" Width="*"/>
+                    <DataGridTextColumn  Header="Услуги" Binding="{Binding Services.Name}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2" Background="#4A67F7">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Полная информация о клиенте"  FontSize="18" Foreground="White"/>
+            <StackPanel Grid.Row="1">
+                <TextBlock Name="TBlockNumAbo" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockFIO" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockSerPas" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockNumPas" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockDataPas" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockByPas" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockNumCont" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockDataCont" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockDataContD" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockReason" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockLC" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockAddress" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockServis" FontSize="14" Foreground="White"/>
+                <TextBlock Name="TBlockEq" FontSize="14" Foreground="White"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,80 @@
+﻿<Window x:Class="YP01Telekom.CRM"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YP01Telekom"
+        mc:Ignorable="d"
+        Title="Телеком Нева Связь" Height="600" Width="1612">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="photo/Лого.jpg" MouseDown="Image_MouseDown"/>
+
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal" Name="BntAboS">
+                    <Image Width="30" Source="photo/Абоненты.png"/>
+                    <Button Content="Абоненты" Width="200" Height="30" FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntAbo" Click="BntAbo_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"  Name="BntActS">
+                    <Image Width="30" Source="photo/Активы.png"/>
+                    <Button Content="Активы" Height="30"  Width="200"  FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntAct" Click="BntAct_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"  Name="BntYOS">
+                    <Image Width="30" Source="photo/Управление обрудованием.jpg"/>
+                    <Button Content="Управление оборудованием"  Width="200"  Height="30" FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntYO" Click="BntYO_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"  Name="BntBilS">
+                    <Image Width="30" Source="photo/Биллинг.jpg"/>
+                    <Button Content="Биллинг" Height="30"  Width="200"  FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntBil" Click="BntBil_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="BntPPS">
+                    <Image Width="30" Source="photo/Поддержка пользователей.jpg"/>
+                    <Button Content="Поддержка пользователей" Height="30"  Width="200"  FontSize="12" Background="#B5DEFA" Margin="5"
+                        Name="BntPP" Click="BntPP_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Name="BntCRMS">
+                    <Image Width="30" Source="photo/CRM.png"/>
+                    <Button Content="CRM" Height="30" FontSize="12"  Width="200"  Background="#B5DEFA" Margin="5"
+                        Name="BntCRM" Click="BntCRM_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" VerticalAlignment="Center">
+                <Button Content="проф." Width="40" Height="40" 
+                        Style="{StaticResource buttonCounter}"/>
+                <Button Content="?" FontSize="18"  Width="40" FontWeight="Bold" Height="40" 
+                        Style="{StaticResource buttonCounter}"/>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="CRM ТНС" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+</Window>
