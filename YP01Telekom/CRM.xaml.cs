@@ -27,11 +27,6 @@ namespace YP01Telekom
             worker = pworker;
         }
 
-
-
-
-
-
         private void BntAbo_Click(object sender, RoutedEventArgs e)
         {
         }
@@ -122,6 +117,7 @@ namespace YP01Telekom
             }
           else
             {
+                MessageBox.Show("Такого абонента нет");
                 SPReq.Visibility = Visibility.Hidden;
             }
 
